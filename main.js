@@ -10,7 +10,7 @@ function addTask() {
         return;
     }
 
-    // Create the li element
+    // making of the li element bana
     const li = document.createElement("li");
     li.innerHTML = `
         <label>
@@ -21,11 +21,11 @@ function addTask() {
         <span class="delete-btn">Delete</span>
     `;
 
-    // Append the new task to the list
+    
     listContainer.appendChild(li);
     inputBox.value = "";
 
-    // Select elements within the new task
+    // Selecting of the elements within the new task manze 
     const checkbox = li.querySelector("input[type='checkbox']");
     const editBtn = li.querySelector(".edit-btn");
     const taskSpan = li.querySelector("span");
@@ -37,18 +37,18 @@ function addTask() {
         updateCounters();
     });
 
-    // Edit button: Allow task editing
+    // Edit button ndio hii sasa
     editBtn.addEventListener("click", function () {
         const update = prompt("Edit task:", taskSpan.textContent);
         if (update !== null) {
             taskSpan.textContent = update;
             li.classList.remove("completed");
-            checkbox.checked = false; // Uncheck after editing
+            checkbox.checked = false; // Uncheck itafter editing
             updateCounters();
         }
     });
 
-    // Delete button: Remove the task
+    // Delete button ndio itoe task
     deleteBtn.addEventListener("click", function () {
         if (confirm("Are you sure you want to delete this task?")) {
             li.remove();
